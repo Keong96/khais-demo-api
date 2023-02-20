@@ -1,7 +1,7 @@
 const express = require('express');
 const WebSocket = require('ws')
 const PORT = process.env.PORT || 8080;
-var uuid = require('uuid-random');
+var uuid = require('uuid');
 const path = require('path');
 
 const app = express();
