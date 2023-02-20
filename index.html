@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample Site</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body { padding-top: 50px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <select class="form-select" aria-label="Default select example" id="option" onclick="ShowOption()">
+      </select>
+    </form>
+    <br>
+    <button class="btn btn-primary" onclick="AddPointToBlue(document.getElementById('option').value)">AddPointToBlue</button>
+    <button class="btn btn-danger" onclick="AddPointToRed(document.getElementById('option').value)">AddPointToRed</button>
+  </div>
+    
+</body>
+</html>
+
+<script>
+function ShowOption()
+{
+  dropdown = document.getElementById("option");
+  dropdown.textContent = "";
+  
+  axios({
+    method: 'get',
+    url: '/getOption',
+  })
+    .then(function (response) {
+    for(var i = 0; i < response.data.length; i++)
+    {
+      let option = document.createElement("option");
+      option.setAttribute('value', response.data[i]);
+
+      let optionText = document.createTextNode(response.data[i]);
+      option.appendChild(optionText);
+
+      dropdown.appendChild(option);
+    }
+  });  
+}
+
+function AddPointToBlue(target)
+{
+  axios({
+    method: 'get',
+    url: '/AddPointToBlue/'+target
+  })
+  .then(function (response) {
+    alert("Success!");
+    ShowOption();
+  })
+}
+
+function AddPointToRed(target)
+{
+  axios({
+    method: 'get',
+    url: '/AddPointToRed/'+target
+  })
+  .then(function (response) {
+    alert("Success!");
+    ShowOption();
+  })
+}
+</script>
