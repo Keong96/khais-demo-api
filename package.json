@@ -13,7 +13,6 @@
     "uuid": "^9.0.0",
     "ws": "^8.12.1"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Keong96/khais-demo-api.git"
@@ -22,5 +21,6 @@
     "url": "https://github.com/Keong96/khais-demo-api/issues"
   },
   "homepage": "https://github.com/Keong96/khais-demo-api#readme",
+  "devDependencies": {},
   "description": ""
 }
