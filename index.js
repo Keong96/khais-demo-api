@@ -1,7 +1,7 @@
 const express = require('express');
 const WebSocket = require('ws')
 const PORT = process.env.PORT || 8080;
-var uuid = require('uuid');
+const uuid = require('uuid').v4
 const path = require('path');
 
 const app = express();
@@ -18,6 +18,8 @@ const allClient = [];
 wss.on('connection', function connection(client, req) {
 
     client.id = uuid();
+    console.log("client ="+client.id);
+
     allClient.push(client);
 
     var clientData = `{
