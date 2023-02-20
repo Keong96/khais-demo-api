@@ -1,7 +1,6 @@
 {
   "name": "khais-demo-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -10,7 +9,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "uuid": "^9.0.0",
     "ws": "^8.12.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keong96/khais-demo-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Keong96/khais-demo-api/issues"
+  },
+  "homepage": "https://github.com/Keong96/khais-demo-api#readme",
+  "description": ""
 }
